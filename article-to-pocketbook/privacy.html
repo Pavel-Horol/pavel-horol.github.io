@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Privacy Policy · Article → PocketBook</title>
+  <meta name="description" content="What data the Article → PocketBook extension accesses, why, where it is stored and who receives it.">
+  <link rel="canonical" href="https://pavel-horol.github.io/article-to-pocketbook/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://pavel-horol.github.io/article-to-pocketbook/privacy.html">
+  <link rel="alternate" hreflang="ru" href="https://pavel-horol.github.io/article-to-pocketbook/ru/privacy.html">
+  <link rel="alternate" hreflang="uk" href="https://pavel-horol.github.io/article-to-pocketbook/uk/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://pavel-horol.github.io/article-to-pocketbook/privacy.html">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="legal">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28">Article → PocketBook</a>
+    <nav class="site-nav" aria-label="Site"><ul><li><a href="./">Overview</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></nav>
+    <nav class="langs" aria-label="Language"><ul><li><a href="privacy.html" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="ru/privacy.html" hreflang="ru" lang="ru">Русский</a></li><li><a href="uk/privacy.html" hreflang="uk" lang="uk">Українська</a></li></ul></nav>
+  </div>
+</header>
+<main class="wrap">
+<article class="doc">
+<h1>Privacy Policy</h1>
+<p class="meta">Last updated: <time datetime="2026-10-20">October 20, 2026</time></p>
+
+<p>This policy explains what data the Article → PocketBook browser extension (“the extension”) accesses, why, where it is stored and who receives it. The extension is developed by an independent developer (“we”, “us”). Questions: <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a>.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>Articles are processed locally in your browser. We don’t run any server that receives your data, and we never see it.</li>
+  <li>No analytics, advertising or tracking. We don’t sell or rent data.</li>
+  <li>Data leaves your browser only to do what you asked for: Google sends the email with the book from your Gmail account, PocketBook delivers it to your reader, and websites serve the article’s images.</li>
+  <li>The extension can send email from your Gmail account. It cannot read your email.</li>
+</ul>
+
+<h2>What the extension accesses and why</h2>
+
+<h3>The page you choose to send</h3>
+<p>When you click the extension icon or press its keyboard shortcut, the extension reads the page in the current tab: its address, title, author, site name, publication date, language, text and images. It uses them only to build the EPUB book. The extension does not read other tabs or pages you haven’t chosen, and it does not run on the sites you visit.</p>
+
+<h3>Article images</h3>
+<p>To put images in the book, the extension downloads them directly from the websites that host them. For images hosted on other domains it may ask for optional permission to access all websites. It uses this permission only to download article images, and you can refuse it. Some sites serve images only when the request carries the article address, so while downloading, the extension sends that address in the <code>Referer</code> header. These websites receive the same information as when you view the page in your browser: your IP address, the image address and the article address.</p>
+
+<h3>Your Google account</h3>
+<p>When you click <span class="label">Войти через Google</span> (“Sign in with Google”) and agree, Google grants the extension two permissions:</p>
+<ul>
+  <li><strong>Send email on your behalf</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>). Used only to send the book you chose, or a test message when you click <span class="label">Тестовая отправка</span> (“Test send”), to the Send‑to‑PocketBook address you entered in the settings.</li>
+  <li><strong>Your email address</strong> (<code>https://www.googleapis.com/auth/userinfo.email</code>). Used to show which account is connected and as a sign‑in hint, so the extension can renew access without asking you again.</li>
+</ul>
+<p>The extension does not ask for and has no access to reading, searching, changing or deleting your email, contacts, files or any other Google data. Google issues it a short‑lived access token, valid for about an hour. The extension has no refresh token and no client secret.</p>
+
+<h3>Settings</h3>
+<p>Your Send‑to‑PocketBook address and preferences: whether to show the preview, image options, the email subject template and whether to add a link to the original.</p>
+
+<h2>Where the data is stored</h2>
+<p>Everything is stored in your browser on your device. We have no copy.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
+  <tbody>
+    <tr><td>Settings, including the Send‑to‑PocketBook address</td><td>Browser sync storage. If Chrome sync is on, the browser syncs it between your devices through your Google account.</td><td>Until you change them or remove the extension</td></tr>
+    <tr><td>Email address of the connected Google account</td><td>Local browser storage</td><td>Until you sign out or remove the extension</td></tr>
+    <tr><td>Google access token</td><td>Session storage, in memory only</td><td>About an hour; deleted when you sign out or close the browser</td></tr>
+    <tr><td>Article content, your edits in the preview, send status</td><td>Session storage, in memory only</td><td>Until you close the browser; entries older than 12 hours are also removed automatically</td></tr>
+    <tr><td>Built EPUB files</td><td>The extension’s database (IndexedDB) on your device</td><td>Removed once older than 12 hours, at the next browser start or the next article you process</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Who receives data</h2>
+<ul>
+  <li><strong>Google</strong>, to sign you in, check the token and send the email through the Gmail API. The email contains the EPUB file, the article title as the subject (you can change the template) and a line with the link to the original article. It is sent from your Gmail account, so a copy stays in your Sent folder. Google processes this data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+  <li><strong>PocketBook.</strong> The email goes to the Send‑to‑PocketBook address you entered. PocketBook processes it under its own privacy policy and delivers the book to your reader.</li>
+  <li><strong>Websites hosting the article’s images</strong>, as described above.</li>
+</ul>
+<p>We don’t share data with anyone else. We don’t sell data, don’t use or transfer it for advertising, and don’t use or transfer it to determine creditworthiness or for lending purposes.</p>
+
+<h2>Google API Services User Data Policy</h2>
+<p>Article → PocketBook’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. In particular:</p>
+<ul>
+  <li>data received from Google APIs is used only to provide the features you see in the extension: sending the book you chose and showing which account is connected;</li>
+  <li>it is transferred to others only as needed for that: the email with the book goes to the address you entered;</li>
+  <li>it is not used for advertising, including personalized, retargeted or interest‑based advertising;</li>
+  <li>no human reads it: it never reaches us;</li>
+  <li>it is not used to develop, improve or train generalized AI or machine learning models.</li>
+</ul>
+<p>The extension’s handling of data also complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies">Chrome Web Store Developer Program Policies</a>, including the Limited Use requirements.</p>
+
+<h2>Permissions</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td><code>activeTab</code>, <code>scripting</code></td><td>Read the article in the tab where you clicked the icon or pressed the shortcut.</td></tr>
+    <tr><td><code>storage</code></td><td>Keep the settings, the connected account address and the temporary data listed above.</td></tr>
+    <tr><td><code>identity</code></td><td>Open the Google sign‑in window.</td></tr>
+    <tr><td><code>offscreen</code></td><td>Convert the article to the XHTML that EPUB requires and render SVG images. The extension’s background script cannot parse HTML by itself.</td></tr>
+    <tr><td><code>notifications</code></td><td>Report the result when you send without the preview.</td></tr>
+    <tr><td><code>declarativeNetRequest</code></td><td>Add the article address (<code>Referer</code>) to the extension’s own image requests.</td></tr>
+    <tr><td><code>declarativeContent</code></td><td>Enable the icon only on pages that look like articles.</td></tr>
+    <tr><td>Access to <code>gmail.googleapis.com</code> and <code>oauth2.googleapis.com</code></td><td>Send the email, check and revoke the token.</td></tr>
+    <tr><td>Optional access to all websites</td><td>Download article images hosted on other domains. Requested only when needed; you can refuse.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Your choices</h2>
+<ul>
+  <li>Sign out (<span class="label">Выйти</span>) in the extension’s settings: the token and the account address are deleted from the browser, and the extension asks Google to revoke the token.</li>
+  <li>Revoke the extension’s access at any time in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</li>
+  <li>Remove the extension: the browser deletes all data it stored, settings included.</li>
+  <li>Emails already sent stay in your Gmail Sent folder, and books stay in PocketBook, until you delete them there.</li>
+</ul>
+<p>Since we hold no data about you, there is nothing for us to export or delete, but you are welcome to contact us with any question.</p>
+
+<h2>Security</h2>
+<p>All requests go over HTTPS. The access token is kept in session memory only and is never written to disk. The extension contains no client secret and does not load or run code from the internet.</p>
+
+<h2>Children</h2>
+<p>The extension is not directed at children under 13, and we don’t knowingly collect data from them.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the way the extension handles data changes, we will update this page and the date at the top before releasing the new version of the extension.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
+    <p>Article → PocketBook is an independent project, not affiliated with or endorsed by PocketBook or Google. PocketBook, Gmail and Google are trademarks of their respective owners.</p>
+  </div>
+</footer>
+</body>
+</html>

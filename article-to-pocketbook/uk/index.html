@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Article → PocketBook: статті з браузера на читалку PocketBook</title>
+  <meta name="description" content="Розширення для браузера: перетворює відкриту статтю на охайний EPUB з картинками й надсилає його на PocketBook через Send-to-PocketBook.">
+  <link rel="canonical" href="https://pavel-horol.github.io/article-to-pocketbook/uk/">
+  <link rel="alternate" hreflang="en" href="https://pavel-horol.github.io/article-to-pocketbook/">
+  <link rel="alternate" hreflang="ru" href="https://pavel-horol.github.io/article-to-pocketbook/ru/">
+  <link rel="alternate" hreflang="uk" href="https://pavel-horol.github.io/article-to-pocketbook/uk/">
+  <link rel="alternate" hreflang="x-default" href="https://pavel-horol.github.io/article-to-pocketbook/">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="home">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../uk/"><img src="../icon.svg" alt="" width="28" height="28">Article → PocketBook</a>
+    <nav class="site-nav" aria-label="Розділи сайту"><ul><li><a href="../uk/" aria-current="page">Про розширення</a></li><li><a href="../uk/privacy.html">Конфіденційність</a></li><li><a href="../uk/terms.html">Умови</a></li></ul></nav>
+    <nav class="langs" aria-label="Мова"><ul><li><a href="../" hreflang="en" lang="en">English</a></li><li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="../uk/" hreflang="uk" lang="uk" aria-current="true">Українська</a></li></ul></nav>
+  </div>
+</header>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <h1>Article → PocketBook</h1>
+    <p class="lede">Розширення для браузера: перетворює статтю, яку ви читаєте, на охайну EPUB-книжку з картинками, підготовленими для e‑ink, і одним кліком надсилає її на читалку PocketBook.</p>
+    <p class="badge">Незабаром у Chrome Web Store</p>
+  </div>
+  <svg class="illustration" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="photo-web"><rect x="28" y="128" width="156" height="48" rx="4"/></clipPath>
+    <clipPath id="photo-book"><rect x="282" y="98" width="86" height="34" rx="2"/></clipPath>
+  </defs>
+  <rect class="i-window" x="8" y="28" width="196" height="184" rx="10"/>
+  <path class="i-rule" d="M9 54h194"/>
+  <circle class="i-dot" cx="24" cy="41" r="4"/><circle class="i-dot" cx="38" cy="41" r="4"/><circle class="i-dot" cx="52" cy="41" r="4"/>
+  <rect class="i-head" x="28" y="70" width="124" height="10" rx="3"/>
+  <rect class="i-text" x="28" y="90" width="156" height="6" rx="3"/>
+  <rect class="i-text" x="28" y="102" width="148" height="6" rx="3"/>
+  <rect class="i-text" x="28" y="114" width="156" height="6" rx="3"/>
+  <g clip-path="url(#photo-web)">
+    <rect class="c-sky" x="28" y="128" width="156" height="48"/>
+    <circle class="c-sun" cx="160" cy="142" r="7"/>
+    <path class="c-hill" d="M28 176 70 146l28 16 30-24 56 38z"/>
+  </g>
+  <rect class="i-text" x="28" y="186" width="140" height="6" rx="3"/>
+  <rect class="i-text" x="28" y="198" width="96" height="6" rx="3"/>
+  <path class="i-arrow" d="M216 120h30m-9-9 10 9-10 9"/>
+  <rect class="i-reader" x="258" y="12" width="134" height="216" rx="16"/>
+  <rect class="i-screen" x="270" y="26" width="110" height="166" rx="4"/>
+  <rect class="i-ink" x="282" y="40" width="72" height="8" rx="2"/>
+  <rect class="i-ink-soft" x="282" y="58" width="86" height="4" rx="2"/>
+  <rect class="i-ink-soft" x="282" y="68" width="80" height="4" rx="2"/>
+  <rect class="i-ink-soft" x="282" y="78" width="86" height="4" rx="2"/>
+  <g clip-path="url(#photo-book)">
+    <rect class="g-sky" x="282" y="98" width="86" height="34"/>
+    <circle class="g-sun" cx="354" cy="106" r="4"/>
+    <path class="g-hill" d="M282 132 305 115l15 9 17-14 31 22z"/>
+  </g>
+  <rect class="i-ink-soft" x="282" y="142" width="86" height="4" rx="2"/>
+  <rect class="i-ink-soft" x="282" y="152" width="86" height="4" rx="2"/>
+  <rect class="i-ink-soft" x="282" y="162" width="58" height="4" rx="2"/>
+  <rect class="i-button" x="310" y="206" width="30" height="6" rx="3"/>
+</svg>
+</section>
+
+<section class="section" aria-labelledby="how">
+  <h2 id="how">Як це працює</h2>
+  <ol class="steps">
+    <li><strong>Відкрийте статтю</strong> й натисніть на іконку розширення або <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.</li>
+    <li><strong>Перевірте книжку в попередньому перегляді.</strong> Приберіть зайві блоки, виправте заголовок чи автора.</li>
+    <li><strong>Надішліть.</strong> Книжка збирається просто в браузері й іде листом із вашого Gmail на адресу Send‑to‑PocketBook. На читалці вона з’явиться після найближчої синхронізації.</li>
+  </ol>
+  <p>Книжку можна й просто завантажити в EPUB. Якщо вимкнути попередній перегляд, стаття надсилається одразу.</p>
+</section>
+
+<section class="section" aria-labelledby="book">
+  <h2 id="book">Що потрапить у книжку</h2>
+  <ul class="features">
+    <li><strong>Лише стаття</strong> Меню, реклама, коментарі та спливні вікна лишаються поза книжкою.</li>
+    <li><strong>Картинки для e‑ink</strong> Переводяться у відтінки сірого й зменшуються під екран. Розмір, якість і колірність налаштовуються.</li>
+    <li><strong>Ліниві картинки теж</strong> Зображення, що підвантажуються під час прокручування, та адаптивні картинки потрапляють у книжку.</li>
+    <li><strong>Справжня обкладинка</strong> Сайт, заголовок, автор і дата, щоб статті в бібліотеці не виглядали однаково.</li>
+    <li><strong>Зміст і джерело</strong> Зміст книжки та посилання на оригінальну сторінку.</li>
+    <li><strong>Відео, дописи, формули</strong> Відео й дописи із соцмереж стають посиланнями, формули зберігаються в TeX.</li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="need">
+  <h2 id="need">Що знадобиться</h2>
+  <ul>
+    <li>Читалка PocketBook з адресою Send‑to‑PocketBook (<code>…@pbsync.com</code>). На читалці вона в розділі <em>Налаштування → Облікові записи та синхронізація → Send‑to‑PocketBook</em>.</li>
+    <li>Обліковий запис Google з Gmail: книжки надсилаються з вашої власної скриньки.</li>
+    <li>Google Chrome або інший браузер на Chromium. Перевірено в Chrome і Brave.</li>
+  </ul>
+  <p class="note">Інтерфейс розширення поки що лише російською. Назви кнопок нижче наведено так, як вони там написані.</p>
+</section>
+
+<section class="section" aria-labelledby="setup">
+  <h2 id="setup">Налаштування за хвилину</h2>
+  <ol>
+    <li>Відкрийте налаштування розширення й введіть адресу Send‑to‑PocketBook.</li>
+    <li>Натисніть <span class="label">Войти через Google</span> («Увійти через Google») і дозвольте надсилання листів.</li>
+    <li>Натисніть <span class="label">Тестовая отправка</span> («Тестове надсилання»). Від PocketBook прийде лист про невідомого відправника: натисніть у ньому <em>add to whitelist</em>, інакше PocketBook мовчки відкидає листи з вашого Gmail.</li>
+  </ol>
+</section>
+
+<section class="section panel" aria-labelledby="google">
+  <h2 id="google">Навіщо розширенню доступ до облікового запису Google</h2>
+  <p>Книжки надсилаються з вашого Gmail, тому розширення просить у Google два дозволи:</p>
+  <dl class="scopes">
+    <dt>Надсилати листи від вашого імені <code>gmail.send</code></dt>
+    <dd>Лише щоб надіслати вибрану книжку на вказану вами адресу Send‑to‑PocketBook. Читати, шукати, змінювати чи видаляти ваші листи розширення не може.</dd>
+    <dt>Бачити адресу вашої пошти <code>userinfo.email</code></dt>
+    <dd>Щоб показати, який обліковий запис підключено, і оновлювати доступ, не питаючи вас знову.</dd>
+  </dl>
+  <p>Вийти можна в налаштуваннях розширення будь-коли, а відкликати доступ — в <a href="https://myaccount.google.com/permissions">обліковому записі Google</a>.</p>
+  <p class="fine">Використання та передавання в інші застосунки інформації, яку розширення Article → PocketBook отримує з API Google, відповідають <a href="https://developers.google.com/terms/api-services-user-data-policy">політиці щодо даних користувачів сервісів Google API</a> (Google API Services User Data Policy), зокрема вимогам щодо обмеженого використання (Limited Use).</p>
+</section>
+
+<section class="section" aria-labelledby="privacy">
+  <h2 id="privacy">Коротко про приватність</h2>
+  <ul>
+    <li>Статті обробляються у вашому браузері. Жодного нашого сервера посередині немає.</li>
+    <li>Жодної аналітики, реклами чи стеження. Дані не продаються.</li>
+    <li>Книжка потрапляє лише до Google, який надсилає лист, і до PocketBook, який доставляє її на читалку.</li>
+  </ul>
+  <p><a href="privacy.html">Повна політика конфіденційності</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="../uk/privacy.html">Політика конфіденційності</a> · <a href="../uk/terms.html">Умови використання</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
+    <p>Article → PocketBook — незалежний проєкт, не пов’язаний із PocketBook і Google та не схвалений ними. PocketBook, Gmail і Google — торговельні марки відповідних власників.</p>
+  </div>
+</footer>
+</body>
+</html>
