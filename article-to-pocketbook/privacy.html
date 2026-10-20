@@ -54,7 +54,7 @@
 <p>The extension does not ask for and has no access to reading, searching, changing or deleting your email, contacts, files or any other Google data. Google issues it a short‑lived access token, valid for about an hour. The extension has no refresh token and no client secret.</p>
 
 <h3>Settings</h3>
-<p>Your Send‑to‑PocketBook address and preferences: whether to show the preview, image options, the email subject template and whether to add a link to the original.</p>
+<p>Your Send‑to‑PocketBook address and preferences: image options, the email subject template and whether to add a link to the original.</p>
 
 <h2>Where the data is stored</h2>
 <p>Everything is stored in your browser on your device. We have no copy.</p>
@@ -99,7 +99,7 @@
     <tr><td><code>storage</code></td><td>Keep the settings, the connected account address and the temporary data listed above.</td></tr>
     <tr><td><code>identity</code></td><td>Open the Google sign‑in window.</td></tr>
     <tr><td><code>offscreen</code></td><td>Convert the article to the XHTML that EPUB requires and render SVG images. The extension’s background script cannot parse HTML by itself.</td></tr>
-    <tr><td><code>notifications</code></td><td>Report the result when you send without the preview.</td></tr>
+    <tr><td><code>notifications</code></td><td>Report the result when the extension menu closes before the book is built or sent.</td></tr>
     <tr><td><code>declarativeNetRequest</code></td><td>Add the article address (<code>Referer</code>) to the extension’s own image requests.</td></tr>
     <tr><td><code>declarativeContent</code></td><td>Enable the icon only on pages that look like articles.</td></tr>
     <tr><td>Access to <code>gmail.googleapis.com</code> and <code>oauth2.googleapis.com</code></td><td>Send the email, check and revoke the token.</td></tr>
