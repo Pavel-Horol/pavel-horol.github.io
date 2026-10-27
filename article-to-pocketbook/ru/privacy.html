@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Политика конфиденциальности · Article → PocketBook</title>
-  <meta name="description" content="К каким данным получает доступ расширение Article → PocketBook, зачем, где они хранятся и кто их получает.">
+  <title>Политика конфиденциальности · Inkpost</title>
+  <meta name="description" content="К каким данным получает доступ расширение Inkpost, зачем, где они хранятся и кто их получает.">
   <link rel="canonical" href="https://pavel-horol.github.io/article-to-pocketbook/ru/privacy.html">
   <link rel="alternate" hreflang="en" href="https://pavel-horol.github.io/article-to-pocketbook/privacy.html">
   <link rel="alternate" hreflang="ru" href="https://pavel-horol.github.io/article-to-pocketbook/ru/privacy.html">
@@ -17,7 +17,7 @@
 <body class="legal">
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../ru/"><img src="../icon.svg" alt="" width="28" height="28">Article → PocketBook</a>
+    <a class="brand" href="../ru/"><img src="../icon.svg" alt="" width="28" height="28">Inkpost</a>
     <nav class="site-nav" aria-label="Разделы сайта"><ul><li><a href="../ru/">О расширении</a></li><li><a href="../ru/privacy.html" aria-current="page">Конфиденциальность</a></li><li><a href="../ru/terms.html">Условия</a></li></ul></nav>
     <nav class="langs" aria-label="Язык"><ul><li><a href="../privacy.html" hreflang="en" lang="en">English</a></li><li><a href="../ru/privacy.html" hreflang="ru" lang="ru" aria-current="true">Русский</a></li><li><a href="../uk/privacy.html" hreflang="uk" lang="uk">Українська</a></li></ul></nav>
   </div>
@@ -27,7 +27,7 @@
 <h1>Политика конфиденциальности</h1>
 <p class="meta">Обновлено: <time datetime="2026-10-27">27 октября 2026 г.</time></p>
 
-<p>Эта политика описывает, к каким данным получает доступ браузерное расширение Article → PocketBook («расширение»), зачем, где они хранятся и кто их получает. Расширение разрабатывает независимый разработчик («мы»). Вопросы: <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a>.</p>
+<p>Эта политика описывает, к каким данным получает доступ браузерное расширение Inkpost («расширение»), зачем, где они хранятся и кто их получает. Расширение разрабатывает независимый разработчик («мы»). Вопросы: <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a>.</p>
 <p class="note">Юридически значимой считается <a href="../privacy.html" hreflang="en" lang="en">английская версия</a>. Перевод приведён для удобства.</p>
 
 <h2>Коротко</h2>
@@ -47,9 +47,9 @@
 <p>Чтобы добавить картинки в книгу, расширение скачивает их напрямую с сайтов, где они лежат. Для картинок с других доменов оно может попросить необязательное разрешение на доступ ко всем сайтам. Это разрешение используется только для скачивания картинок статьи, и от него можно отказаться. Некоторые сайты отдают картинки только тогда, когда в запросе указан адрес статьи, поэтому при скачивании расширение передаёт его в заголовке <code>Referer</code>. Эти сайты получают те же сведения, что и при обычном просмотре страницы: ваш IP-адрес, адрес картинки и адрес статьи.</p>
 
 <h3>Ваш аккаунт Google</h3>
-<p>Когда вы нажимаете <span class="label">Войти через Google</span> и соглашаетесь, Google выдаёт расширению два разрешения:</p>
+<p>Когда вы нажимаете <span class="label">Sign in with Google</span> («Войти через Google») и соглашаетесь, Google выдаёт расширению два разрешения:</p>
 <ul>
-  <li><strong>Отправка писем от вашего имени</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>). Используется только для отправки выбранной книги или тестового письма по кнопке <span class="label">Тестовая отправка</span> на адрес Send‑to‑PocketBook, указанный в настройках.</li>
+  <li><strong>Отправка писем от вашего имени</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>). Используется только для отправки выбранной книги или тестового письма по кнопке <span class="label">Test send</span> («Тестовая отправка») на адрес Send‑to‑PocketBook, указанный в настройках.</li>
   <li><strong>Адрес вашей почты</strong> (<code>https://www.googleapis.com/auth/userinfo.email</code>). Нужен, чтобы показать, какой аккаунт подключён, и как подсказка при входе, чтобы расширение могло обновлять доступ, не спрашивая вас заново.</li>
 </ul>
 <p>Расширение не запрашивает и не имеет доступа к чтению, поиску, изменению или удалению ваших писем, контактов, файлов и любых других данных Google. Google выдаёт ему короткоживущий токен доступа, который действует около часа. Токена обновления (refresh token) и секрета клиента у расширения нет.</p>
@@ -81,7 +81,7 @@
 <p>Больше мы ни с кем данные не делим. Мы не продаём данные, не используем и не передаём их для рекламы, а также для оценки кредитоспособности или кредитования.</p>
 
 <h2>Политика в отношении пользовательских данных Google API</h2>
-<p>Использование и передача в другие приложения информации, полученной расширением Article → PocketBook из API Google, соответствуют <a href="https://developers.google.com/terms/api-services-user-data-policy">политике в отношении пользовательских данных сервисов Google API</a> (Google API Services User Data Policy), включая требования об ограниченном использовании (Limited Use). В частности:</p>
+<p>Использование и передача в другие приложения информации, полученной расширением Inkpost из API Google, соответствуют <a href="https://developers.google.com/terms/api-services-user-data-policy">политике в отношении пользовательских данных сервисов Google API</a> (Google API Services User Data Policy), включая требования об ограниченном использовании (Limited Use). В частности:</p>
 <ul>
   <li>данные, полученные из API Google, используются только для функций, которые вы видите в расширении: отправки выбранной книги и показа подключённого аккаунта;</li>
   <li>они передаются другим только в той мере, в какой это нужно для этих функций: письмо с книгой уходит на указанный вами адрес;</li>
@@ -111,7 +111,7 @@
 
 <h2>Что вы можете сделать</h2>
 <ul>
-  <li>Выйти (<span class="label">Выйти</span>) в настройках расширения: токен и адрес аккаунта удаляются из браузера, а расширение просит Google отозвать токен.</li>
+  <li>Кнопка <span class="label">Sign out</span> («Выйти») в настройках расширения: токен и адрес аккаунта удаляются из браузера, а расширение просит Google отозвать токен.</li>
   <li>Отозвать доступ расширения в любой момент в <a href="https://myaccount.google.com/permissions">аккаунте Google</a>.</li>
   <li>Удалить расширение: браузер удалит все сохранённые им данные, включая настройки.</li>
   <li>Уже отправленные письма остаются в папке «Отправленные» Gmail, а книги — в PocketBook, пока вы не удалите их там.</li>
@@ -134,7 +134,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="../ru/privacy.html">Политика конфиденциальности</a> · <a href="../ru/terms.html">Условия использования</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Article → PocketBook — независимый проект, не связанный с PocketBook и Google и не одобренный ими. PocketBook, Gmail и Google — товарные знаки соответствующих владельцев.</p>
+    <p>Inkpost — независимый проект, не связанный с PocketBook и Google и не одобренный ими. PocketBook, Gmail и Google — товарные знаки соответствующих владельцев.</p>
   </div>
 </footer>
 </body>
