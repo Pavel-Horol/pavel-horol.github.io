@@ -33,7 +33,7 @@
 <ul>
   <li>Articles are processed locally in your browser. We don’t run any server that receives your data, and we never see it.</li>
   <li>No analytics, advertising or tracking. We don’t sell or rent data.</li>
-  <li>Data leaves your browser only to do what you asked for: Google sends the email with the book from your Gmail account, your e‑reader’s service (for example Amazon, PocketBook or inkBOOK) receives it at the address you entered and delivers it to your reader, and websites serve the article’s images. For a Kobo, the book goes to your own Google Drive or Dropbox, or by email to your Instapaper. For a Boox or a reMarkable, it goes to your account in the maker’s cloud: Onyx Boox (Onyx and Alibaba Cloud servers) or reMarkable.</li>
+  <li>Data leaves your browser only to do what you asked for: Google sends the email with the book from your Gmail account, your e‑reader’s service (for example Amazon, PocketBook or inkBOOK) receives it at the address you entered and delivers it to your reader, and websites serve the article’s images. For a Kobo, the book goes to your own Google Drive or Dropbox, or by email to your Instapaper. For a Boox or a reMarkable, it goes to your account in the maker’s cloud: Onyx Boox (Onyx and Alibaba Cloud servers) or reMarkable. For KOReader, it goes to your own WebDAV server or Dropbox. Through BookDrop, it goes to the BookDrop server you chose (<code>bookdrop.cc</code> by default), a third‑party service that deletes it a few minutes after use.</li>
   <li>The extension can send email from your Gmail account. It cannot read your email.</li>
 </ul>
 
@@ -59,6 +59,7 @@
 
 <h3>Your Dropbox account</h3>
 <p>Only if you add a Kobo that gets books through Dropbox and click <span class="label">Connect Dropbox</span>, Dropbox grants the extension access to write files and see file names in your Dropbox (<code>files.content.write</code>, <code>files.metadata.read</code>) and to see your account’s email address (<code>account_info.read</code>). The <em>Apps → Rakuten Kobo</em> folder belongs to the Kobo app, so the extension can’t be limited to a folder of its own. It uses the access only to find that folder, upload the books you send into it and show which account is connected. It does not read, change or delete your files. Dropbox issues a short‑lived access token and a refresh token, without any secret.</p>
+<p>For KOReader, the same access is used only to upload the books you send into the folder you chose in the settings (<em>/Books</em> by default).</p>
 
 <h3>Your Boox account</h3>
 <p>Only if you add a Boox: you choose the server of your Boox account and enter its email address, and the extension asks Onyx Boox to email you a one‑time code. With that code Onyx issues a sign‑in token. The extension never asks for or stores a Boox password. It uses the token only to get temporary upload keys, upload the books you send and register them for the BooxDrop app on your Boox. This is an unofficial interface of the Boox service, so the feature is marked experimental.</p>
@@ -66,8 +67,14 @@
 <h3>Your reMarkable account</h3>
 <p>Only if you add a reMarkable: you get a one‑time code at <em>my.remarkable.com</em> and enter it in the settings, and reMarkable registers the extension as a browser connection of your account and issues a device token. The extension never asks for or stores a reMarkable password. It uses the token only to upload the books you send to your reMarkable library. This is an unofficial interface of the reMarkable cloud, so the feature is marked experimental.</p>
 
+<h3>Your WebDAV server</h3>
+<p>Only if you add KOReader with WebDAV: you enter the address of a folder on your WebDAV server, a login and an app password. This is the only password the extension stores. It should be an app password, which Nextcloud, ownCloud and most WebDAV hosts issue for a single app and let you revoke, not the password of your account. It is kept in the local storage of this browser only, is never synced, and is sent only to that server, over HTTPS, with each request (HTTP Basic authentication). The extension refuses <code>http://</code> addresses. It uses the access only to check the folder, see whether a file of the same name is already there and upload the books you send.</p>
+
+<h3>BookDrop</h3>
+<p>Only if you add an e‑reader with a web browser: when you send, you type the key that the BookDrop page shows on your e‑reader, and the extension uploads the book with that key to the BookDrop server: <code>https://bookdrop.cc</code> by default, or another send2ereader server you enter. BookDrop is a third‑party service that we don’t control. It shows the book on your e‑reader’s screen for download and deletes it a few minutes after use; for a Kindle it converts the book to MOBI first. The key is used for that one send and is not stored.</p>
+
 <h3>Settings</h3>
-<p>The names and email addresses of the e‑readers you added, the way a Kobo gets books, and your preferences: image options, the email subject template and whether to add a link to the original.</p>
+<p>The names and email addresses of the e‑readers you added, the way a Kobo or KOReader gets books, the Dropbox folder of a KOReader, the address of the BookDrop server, and your preferences: image options, the email subject template and whether to add a link to the original.</p>
 
 <h2>Where the data is stored</h2>
 <p>Everything is stored in your browser on your device. We have no copy.</p>
@@ -84,6 +91,7 @@
     <tr><td>Dropbox tokens, the Dropbox account address and the path of the Kobo folder</td><td>Local browser storage, never synced; separately for each Kobo</td><td>Until you disconnect Dropbox, remove that Kobo or remove the extension</td></tr>
     <tr><td>Boox sign‑in token, the Boox account email, its server and account ID</td><td>Local browser storage, never synced; separately for each Boox</td><td>Until you disconnect, remove that Boox or remove the extension</td></tr>
     <tr><td>reMarkable device token</td><td>Local browser storage, never synced; separately for each reMarkable</td><td>Until you disconnect, remove that reMarkable or remove the extension</td></tr>
+    <tr><td>WebDAV folder address, login and app password</td><td>Local browser storage, never synced; separately for each KOReader</td><td>Until you remove that KOReader, switch it to Dropbox or remove the extension</td></tr>
   </tbody>
 </table>
 </div>
@@ -97,6 +105,8 @@
   <li><strong>Instapaper</strong>, if your Kobo gets articles through it: the email with the book goes to your Instapaper <em>Save via email</em> address and is processed under the <a href="https://www.instapaper.com/privacy">Instapaper Privacy Policy</a>.</li>
   <li><strong>Onyx Boox</strong>, if you add a Boox: your Boox account email, to send you the sign‑in code; then the EPUB file, uploaded to Onyx’s cloud storage on Alibaba Cloud (Object Storage Service, in the region of your Boox server: USA, Europe or China) and registered for BooxDrop, which delivers it to your Boox. Onyx processes it under its own privacy policy.</li>
   <li><strong>reMarkable</strong>, if you add a reMarkable: the EPUB file and its title, uploaded to your reMarkable cloud library, from where your reMarkable downloads it. reMarkable processes it under its own privacy policy.</li>
+  <li><strong>Your WebDAV server</strong>, if KOReader gets books through it: the EPUB file with the login and app password you entered, over HTTPS. The server is yours or your provider’s, and the book stays in the folder until you delete it.</li>
+  <li><strong>BookDrop</strong>, if you add an e‑reader with a web browser: the EPUB file, its file name and the key you typed go to the BookDrop server (<code>bookdrop.cc</code> by default, run by a third party, or a server you entered). It keeps the file only until your e‑reader downloads it and deletes it a few minutes after use. Its operator, not us, is responsible for that server.</li>
   <li><strong>Websites hosting the article’s images</strong>, as described above.</li>
 </ul>
 <p>We don’t share data with anyone else. We don’t sell data, don’t use or transfer it for advertising, and don’t use or transfer it to determine creditworthiness or for lending purposes.</p>
@@ -128,6 +138,7 @@
     <tr><td>Requests to <code>www.googleapis.com</code>, <code>api.dropboxapi.com</code> and <code>content.dropboxapi.com</code>, without extra permission</td><td>Upload the book to Google Drive or Dropbox for a Kobo, only if you chose that. These services accept requests from extensions, so no access to them is requested.</td></tr>
     <tr><td>Optional access to all websites</td><td>Download article images hosted on other domains. Requested only when needed; you can refuse.</td></tr>
     <tr><td>Optional access to the Boox or reMarkable servers, through the same optional permission</td><td>Sign in and upload books for a Boox (<code>push.boox.com</code>, <code>eur.boox.com</code> or <code>send2boox.com</code>, and Onyx’s storage on <code>aliyuncs.com</code>) or a reMarkable (<code>webapp-prod.cloud.remarkable.engineering</code>, <code>internal.cloud.remarkable.com</code>). Requested only for these exact addresses, when you connect that reader; you can refuse.</td></tr>
+    <tr><td>Optional access to your WebDAV server or the BookDrop server, through the same optional permission</td><td>Upload books for KOReader to the WebDAV server you entered, or to the BookDrop server (<code>bookdrop.cc</code> by default). Requested only for that address, when you click <span class="label">Check connection</span> or <span class="label">Allow access</span>; you can refuse.</td></tr>
   </tbody>
 </table>
 </div>
@@ -138,13 +149,14 @@
   <li>Revoke the extension’s access at any time in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</li>
   <li>Click <span class="label">Disconnect</span> in a Kobo’s row, switch it to another way of delivery or remove it: the extension deletes its Dropbox tokens and asks Dropbox to revoke them. You can also remove the app in your <a href="https://www.dropbox.com/account/connected_apps">Dropbox connected apps</a>.</li>
   <li>Click <span class="label">Disconnect</span> in a Boox or reMarkable row, or remove it: the extension deletes its token from the browser. A reMarkable token stays valid at reMarkable until you remove the browser connection in your account at <em>my.remarkable.com</em>.</li>
+  <li>Remove a KOReader or switch it to Dropbox: the extension deletes the WebDAV address, login and app password from the browser. You can also revoke the app password on your server.</li>
   <li>Remove the extension: the browser deletes all data it stored, settings included.</li>
-  <li>Emails already sent stay in your Gmail Sent folder, and books stay with your e‑reader’s service, such as your Amazon library or PocketBook cloud, or in your Google Drive, Dropbox, Instapaper, BooxDrop or reMarkable library, until you delete them there.</li>
+  <li>Emails already sent stay in your Gmail Sent folder, and books stay with your e‑reader’s service, such as your Amazon library or PocketBook cloud, or in your Google Drive, Dropbox, Instapaper, BooxDrop or reMarkable library, or on your WebDAV server, until you delete them there. BookDrop deletes books by itself a few minutes after use.</li>
 </ul>
 <p>Since we hold no data about you, there is nothing for us to export or delete, but you are welcome to contact us with any question.</p>
 
 <h2>Security</h2>
-<p>All requests go over HTTPS. The Google access token is kept in session memory only and is never written to disk. Dropbox, Boox and reMarkable tokens are kept in local browser storage, so that the reader keeps working after a restart; they are never synced. The extension never asks for the password of any account. The extension contains no client secret and does not load or run code from the internet.</p>
+<p>All requests to the services the extension sends to go over HTTPS, unless you enter an <code>http://</code> address of your own BookDrop server; a WebDAV server must use HTTPS. The Google access token is kept in session memory only and is never written to disk. Dropbox, Boox and reMarkable tokens and the WebDAV app password are kept in local browser storage, so that the reader keeps working after a restart; they are never synced. The only password the extension asks for is a WebDAV app password, which should not be the password of your account. The extension contains no client secret and does not load or run code from the internet.</p>
 
 <h2>Children</h2>
 <p>The extension is not directed at children under 13, and we don’t knowingly collect data from them.</p>
@@ -159,7 +171,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, Rakuten Kobo, inkBOOK, Onyx, reMarkable, Dropbox, Instapaper or Google. Amazon, Kindle, PocketBook, Rakuten Kobo, Kobo, inkBOOK, Boox, BooxDrop, reMarkable, Dropbox, Instapaper, Gmail, Google Drive and Google are trademarks of their respective owners.</p>
+    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, Rakuten Kobo, inkBOOK, Onyx, reMarkable, Dropbox, Instapaper, KOReader, BookDrop or Google. Amazon, Kindle, PocketBook, Rakuten Kobo, Kobo, inkBOOK, Boox, BooxDrop, reMarkable, Dropbox, Instapaper, Gmail, Google Drive and Google are trademarks of their respective owners.</p>
   </div>
 </footer>
 </body>
