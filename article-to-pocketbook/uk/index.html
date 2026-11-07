@@ -26,7 +26,7 @@
 <section class="hero">
   <div>
     <h1>Inkpost</h1>
-    <p class="lede">Розширення для браузера: перетворює статтю, яку ви читаєте, на охайну EPUB-книжку з картинками, підготовленими для e‑ink, і надсилає її на вашу читалку: Kindle, PocketBook, inkBOOK або іншу, яка приймає книжки поштою.</p>
+    <p class="lede">Розширення для браузера: перетворює статтю, яку ви читаєте, на охайну EPUB-книжку з картинками, підготовленими для e‑ink, і надсилає її на вашу читалку: Kindle, PocketBook, Kobo, inkBOOK або іншу, яка приймає книжки поштою.</p>
     <p class="badge">Незабаром у Chrome Web Store</p>
   </div>
   <svg class="illustration" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
@@ -96,13 +96,16 @@
         <li><strong>Kindle</strong> з адресою Send to Kindle (<code>…@kindle.com</code>). На сайті Amazon вона в розділі <em>Manage Your Content and Devices → Preferences → Personal Document Settings</em>;</li>
         <li><strong>PocketBook</strong> з адресою Send‑to‑PocketBook (<code>…@pbsync.com</code>). На читалці вона в розділі <em>Налаштування → Облікові записи та синхронізація → Send‑to‑PocketBook</em>;</li>
         <li><strong>inkBOOK</strong> з увімкненою функцією Send2inkBOOK у налаштуваннях читалки;</li>
+        <li><strong>Kobo</strong>: Forma, Sage, Elipsa, Elipsa 2E і Libra Colour отримують книжки через Google Drive або Dropbox, прив’язані на читалці; інші моделі Kobo отримують статті через Instapaper;</li>
+        <li><strong>Boox</strong>: книжки надходять у застосунок BooxDrop через ваш обліковий запис Boox (експериментально);</li>
+        <li><strong>reMarkable</strong>: книжки з’являються в бібліотеці через ваш обліковий запис reMarkable (експериментально);</li>
         <li>або інша читалка, сервіс якої дає адресу для книжок поштою.</li>
       </ul>
     </li>
-    <li>Обліковий запис Google з Gmail: книжки надсилаються з вашої власної скриньки.</li>
+    <li>Обліковий запис Google з Gmail: книжки надсилаються з вашої власної скриньки. Для Kobo з Dropbox, Boox і reMarkable він не потрібен.</li>
     <li>Google Chrome або інший браузер на Chromium. Перевірено в Chrome і Brave.</li>
   </ul>
-  <p class="note">Надсилання перевірено на PocketBook. Kindle, inkBOOK та інші читалки ще не перевірялися: кнопка <span class="label">Test send</span> у налаштуваннях покаже, чи доходять книжки до вашої.</p>
+  <p class="note">Надсилання перевірено на PocketBook. Kindle, Kobo, inkBOOK та інші читалки ще не перевірялися: кнопка <span class="label">Test send</span> у налаштуваннях покаже, чи доходять книжки до вашої. Boox і reMarkable працюють через неофіційні сервіси виробників і можуть перестати працювати будь-коли.</p>
   <p class="note">Інтерфейс розширення англійською. Назви кнопок нижче наведено так, як вони там написані.</p>
 </section>
 
@@ -125,6 +128,11 @@
     <dt>Бачити адресу вашої пошти <code>userinfo.email</code></dt>
     <dd>Щоб показати, який обліковий запис підключено, і оновлювати доступ, не питаючи вас знову.</dd>
   </dl>
+  <p>Лише якщо ваш Kobo отримує книжки через Google Drive, розширення окремо просить ще один дозвіл:</p>
+  <dl class="scopes">
+    <dt>Бачити й додавати лише файли, створені розширенням <code>drive.file</code></dt>
+    <dd>Потрібен лише для того, щоб створити у вашому Google Drive папку Rakuten Kobo і класти в неї книжки, які ви надсилаєте. Інших ваших файлів розширення не бачить і не змінює.</dd>
+  </dl>
   <p>Вийти можна в налаштуваннях розширення будь-коли, а відкликати доступ — в <a href="https://myaccount.google.com/permissions">обліковому записі Google</a>.</p>
   <p class="fine">Використання та передавання в інші застосунки інформації, яку розширення Inkpost отримує з API Google, відповідають <a href="https://developers.google.com/terms/api-services-user-data-policy">політиці щодо даних користувачів сервісів Google API</a> (Google API Services User Data Policy), зокрема вимогам щодо обмеженого використання (Limited Use).</p>
 </section>
@@ -134,7 +142,7 @@
   <ul>
     <li>Статті обробляються у вашому браузері. Жодного нашого сервера посередині немає.</li>
     <li>Жодної аналітики, реклами чи стеження. Дані не продаються.</li>
-    <li>Книжка потрапляє лише до Google, який надсилає лист, і до сервісу вашої читалки, наприклад Amazon, PocketBook чи inkBOOK, який доставляє її на пристрій.</li>
+    <li>Книжка потрапляє лише до Google, який надсилає лист, і до сервісу вашої читалки, наприклад Amazon, PocketBook чи inkBOOK, який доставляє її на пристрій. Для Kobo книжка натомість потрапляє до вашого власного Google Drive, Dropbox чи Instapaper, а для Boox і reMarkable — до вашого облікового запису в хмарі виробника.</li>
   </ul>
   <p><a href="privacy.html">Повна політика конфіденційності</a></p>
 </section>
@@ -142,7 +150,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="../uk/privacy.html">Політика конфіденційності</a> · <a href="../uk/terms.html">Умови використання</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost — незалежний проєкт, не пов’язаний з Amazon, PocketBook, inkBOOK і Google та не схвалений ними. Amazon, Kindle, PocketBook, inkBOOK, Gmail і Google — торговельні марки відповідних власників.</p>
+    <p>Inkpost — незалежний проєкт, не пов’язаний з Amazon, PocketBook, Rakuten Kobo, inkBOOK, Onyx, reMarkable, Dropbox, Instapaper і Google та не схвалений ними. Amazon, Kindle, PocketBook, Rakuten Kobo, Kobo, inkBOOK, Boox, BooxDrop, reMarkable, Dropbox, Instapaper, Gmail, Google Drive і Google — торговельні марки відповідних власників.</p>
   </div>
 </footer>
 </body>

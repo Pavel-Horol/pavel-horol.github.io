@@ -26,7 +26,7 @@
 <section class="hero">
   <div>
     <h1>Inkpost</h1>
-    <p class="lede">A browser extension that turns the article you’re reading into a clean EPUB book, with images prepared for e‑ink, and sends it to your e‑reader: a Kindle, a PocketBook, an inkBOOK or another reader that receives books by email.</p>
+    <p class="lede">A browser extension that turns the article you’re reading into a clean EPUB book, with images prepared for e‑ink, and sends it to your e‑reader: a Kindle, a PocketBook, a Kobo, an inkBOOK or another reader that receives books by email.</p>
     <p class="badge">Coming soon to the Chrome Web Store</p>
   </div>
   <svg class="illustration" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
@@ -96,13 +96,16 @@
         <li>a <strong>Kindle</strong> with its Send to Kindle address (<code>…@kindle.com</code>). On Amazon it’s under <em>Manage Your Content and Devices → Preferences → Personal Document Settings</em>;</li>
         <li>a <strong>PocketBook</strong> with a Send‑to‑PocketBook address (<code>…@pbsync.com</code>). On the reader it’s under <em>Settings → Accounts and Synchronization → Send‑to‑PocketBook</em>;</li>
         <li>an <strong>inkBOOK</strong> with Send2inkBOOK turned on in the reader’s settings;</li>
+        <li>a <strong>Kobo</strong>: Forma, Sage, Elipsa, Elipsa 2E and Libra Colour get books through Google Drive or Dropbox linked on the reader; other Kobo models get articles through Instapaper;</li>
+        <li>a <strong>Boox</strong>: books arrive in the BooxDrop app through your Boox account (experimental);</li>
+        <li>a <strong>reMarkable</strong>: books arrive in its library through your reMarkable account (experimental);</li>
         <li>or another reader whose service gives you an address for books sent by email.</li>
       </ul>
     </li>
-    <li>A Google account with Gmail: books are sent from your own mailbox.</li>
+    <li>A Google account with Gmail: books are sent from your own mailbox. A Kobo with Dropbox, a Boox or a reMarkable doesn’t need it.</li>
     <li>Google Chrome or another Chromium‑based browser. Tested in Chrome and Brave.</li>
   </ul>
-  <p class="note">Sending has been tested on a PocketBook. Kindle, inkBOOK and other readers haven’t been tested yet: <span class="label">Test send</span> in the settings shows whether yours receives the books.</p>
+  <p class="note">Sending has been tested on a PocketBook. Kindle, Kobo, inkBOOK and other readers haven’t been tested yet: <span class="label">Test send</span> in the settings shows whether yours receives the books. Boox and reMarkable use unofficial services of their makers and may stop working at any time.</p>
 </section>
 
 <section class="section" aria-labelledby="setup">
@@ -124,6 +127,11 @@
     <dt>See your email address <code>userinfo.email</code></dt>
     <dd>Used to show which account is connected and to renew access without asking you again.</dd>
   </dl>
+  <p>Only if your Kobo gets books through Google Drive, the extension separately asks for one more permission:</p>
+  <dl class="scopes">
+    <dt>See and add only the files the extension creates <code>drive.file</code></dt>
+    <dd>Used only to create a Rakuten Kobo folder in your Google Drive and put the books you send into it. The extension cannot see or change your other files.</dd>
+  </dl>
   <p>You can sign out in the extension’s settings at any time or revoke access in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</p>
   <p class="fine">Inkpost’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 </section>
@@ -133,7 +141,7 @@
   <ul>
     <li>Articles are processed in your browser. There is no server of ours in between.</li>
     <li>No analytics, no ads, no tracking. Nothing is sold.</li>
-    <li>The book goes only to Google, which sends the email, and to your e‑reader’s service, such as Amazon, PocketBook or inkBOOK, which delivers it to your reader.</li>
+    <li>The book goes only to Google, which sends the email, and to your e‑reader’s service, such as Amazon, PocketBook or inkBOOK, which delivers it to your reader. For a Kobo it goes to your own Google Drive, Dropbox or Instapaper instead, and for a Boox or a reMarkable to your account in the maker’s cloud.</li>
   </ul>
   <p><a href="privacy.html">Read the full privacy policy</a></p>
 </section>
@@ -141,7 +149,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, inkBOOK or Google. Amazon, Kindle, PocketBook, inkBOOK, Gmail and Google are trademarks of their respective owners.</p>
+    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, Rakuten Kobo, inkBOOK, Onyx, reMarkable, Dropbox, Instapaper or Google. Amazon, Kindle, PocketBook, Rakuten Kobo, Kobo, inkBOOK, Boox, BooxDrop, reMarkable, Dropbox, Instapaper, Gmail, Google Drive and Google are trademarks of their respective owners.</p>
   </div>
 </footer>
 </body>
