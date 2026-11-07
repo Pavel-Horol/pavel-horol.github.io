@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Inkpost: send web articles to your PocketBook</title>
-  <meta name="description" content="A browser extension that turns the article you are reading into a clean EPUB with images and sends it to your PocketBook through Send-to-PocketBook.">
+  <title>Inkpost: send web articles to your e-reader</title>
+  <meta name="description" content="A browser extension that turns the article you are reading into a clean EPUB with images and emails it to your Kindle, PocketBook or other e-reader.">
   <link rel="canonical" href="https://pavel-horol.github.io/article-to-pocketbook/">
   <link rel="alternate" hreflang="en" href="https://pavel-horol.github.io/article-to-pocketbook/">
   <link rel="alternate" hreflang="ru" href="https://pavel-horol.github.io/article-to-pocketbook/ru/">
@@ -26,7 +26,7 @@
 <section class="hero">
   <div>
     <h1>Inkpost</h1>
-    <p class="lede">A browser extension that turns the article you’re reading into a clean EPUB book, with images prepared for e‑ink, and sends it to your PocketBook e‑reader in one click.</p>
+    <p class="lede">A browser extension that turns the article you’re reading into a clean EPUB book, with images prepared for e‑ink, and sends it to your e‑reader: a Kindle, a PocketBook, an inkBOOK or another reader that receives books by email.</p>
     <p class="badge">Coming soon to the Chrome Web Store</p>
   </div>
   <svg class="illustration" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
@@ -71,9 +71,9 @@
   <h2 id="how">How it works</h2>
   <ol class="steps">
     <li><strong>Open an article</strong> and click the extension icon or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.</li>
-    <li><strong>Send it.</strong> Click the send button in the menu that opens. The book is built right in your browser and emailed from your Gmail to your Send‑to‑PocketBook address. It shows up on the reader after the next sync.</li>
+    <li><strong>Send it.</strong> Click the send button in the menu that opens. The book is built right in your browser and emailed from your Gmail to your e‑reader’s address. It shows up on the reader after the next sync.</li>
   </ol>
-  <p>From the same menu you can just download the EPUB, or open the preview to remove the blocks you don’t need and fix the title or author.</p>
+  <p>If you have several readers, choose one in the same menu. From there you can also just download the EPUB, or open the preview to remove the blocks you don’t need and fix the title or author.</p>
 </section>
 
 <section class="section" aria-labelledby="book">
@@ -91,18 +91,27 @@
 <section class="section" aria-labelledby="need">
   <h2 id="need">What you need</h2>
   <ul>
-    <li>A PocketBook e‑reader with a Send‑to‑PocketBook address (<code>…@pbsync.com</code>). On the reader it’s under <em>Settings → Accounts and Synchronization → Send‑to‑PocketBook</em>.</li>
+    <li>An e‑reader that receives books by email:
+      <ul>
+        <li>a <strong>Kindle</strong> with its Send to Kindle address (<code>…@kindle.com</code>). On Amazon it’s under <em>Manage Your Content and Devices → Preferences → Personal Document Settings</em>;</li>
+        <li>a <strong>PocketBook</strong> with a Send‑to‑PocketBook address (<code>…@pbsync.com</code>). On the reader it’s under <em>Settings → Accounts and Synchronization → Send‑to‑PocketBook</em>;</li>
+        <li>an <strong>inkBOOK</strong> with Send2inkBOOK turned on in the reader’s settings;</li>
+        <li>or another reader whose service gives you an address for books sent by email.</li>
+      </ul>
+    </li>
     <li>A Google account with Gmail: books are sent from your own mailbox.</li>
     <li>Google Chrome or another Chromium‑based browser. Tested in Chrome and Brave.</li>
   </ul>
+  <p class="note">Sending has been tested on a PocketBook. Kindle, inkBOOK and other readers haven’t been tested yet: <span class="label">Test send</span> in the settings shows whether yours receives the books.</p>
 </section>
 
 <section class="section" aria-labelledby="setup">
   <h2 id="setup">Setup takes a minute</h2>
   <ol>
-    <li>Open the extension’s settings and enter your Send‑to‑PocketBook address.</li>
+    <li>Open the extension’s settings, choose your e‑reader and enter its address.</li>
     <li>Click <span class="label">Sign in with Google</span> and allow the extension to send email.</li>
-    <li>Click <span class="label">Test send</span>. PocketBook will send you a message about an unknown sender: click <em>add to whitelist</em> in it, otherwise PocketBook silently drops emails from your Gmail address.</li>
+    <li>On a Kindle, add your Gmail address to the <em>Approved Personal Document E‑mail List</em> in Amazon’s settings, otherwise Amazon rejects the email. Other services may also keep a list of approved senders.</li>
+    <li>Click <span class="label">Test send</span>. On a PocketBook you will get a message about an unknown sender: click <em>add to whitelist</em> in it, otherwise PocketBook silently drops emails from your Gmail address.</li>
   </ol>
 </section>
 
@@ -111,7 +120,7 @@
   <p>Books are sent from your own Gmail, so the extension asks Google for two permissions:</p>
   <dl class="scopes">
     <dt>Send email on your behalf <code>gmail.send</code></dt>
-    <dd>Used only to send the book you chose to the Send‑to‑PocketBook address you entered. The extension cannot read, search, change or delete your email.</dd>
+    <dd>Used only to send the book you chose to the e‑reader address you entered. The extension cannot read, search, change or delete your email.</dd>
     <dt>See your email address <code>userinfo.email</code></dt>
     <dd>Used to show which account is connected and to renew access without asking you again.</dd>
   </dl>
@@ -124,7 +133,7 @@
   <ul>
     <li>Articles are processed in your browser. There is no server of ours in between.</li>
     <li>No analytics, no ads, no tracking. Nothing is sold.</li>
-    <li>The book goes only to Google, which sends the email, and to PocketBook, which delivers it to your reader.</li>
+    <li>The book goes only to Google, which sends the email, and to your e‑reader’s service, such as Amazon, PocketBook or inkBOOK, which delivers it to your reader.</li>
   </ul>
   <p><a href="privacy.html">Read the full privacy policy</a></p>
 </section>
@@ -132,7 +141,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost is an independent project, not affiliated with or endorsed by PocketBook or Google. PocketBook, Gmail and Google are trademarks of their respective owners.</p>
+    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, inkBOOK or Google. Amazon, Kindle, PocketBook, inkBOOK, Gmail and Google are trademarks of their respective owners.</p>
   </div>
 </footer>
 </body>

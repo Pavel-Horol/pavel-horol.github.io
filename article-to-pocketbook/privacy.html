@@ -25,7 +25,7 @@
 <main class="wrap">
 <article class="doc">
 <h1>Privacy Policy</h1>
-<p class="meta">Last updated: <time datetime="2026-10-27">October 27, 2026</time></p>
+<p class="meta">Last updated: <time datetime="2026-11-07">November 7, 2026</time></p>
 
 <p>This policy explains what data the Inkpost browser extension (“the extension”) accesses, why, where it is stored and who receives it. The extension is developed by an independent developer (“we”, “us”). Questions: <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a>.</p>
 
@@ -33,7 +33,7 @@
 <ul>
   <li>Articles are processed locally in your browser. We don’t run any server that receives your data, and we never see it.</li>
   <li>No analytics, advertising or tracking. We don’t sell or rent data.</li>
-  <li>Data leaves your browser only to do what you asked for: Google sends the email with the book from your Gmail account, PocketBook delivers it to your reader, and websites serve the article’s images.</li>
+  <li>Data leaves your browser only to do what you asked for: Google sends the email with the book from your Gmail account, your e‑reader’s service (for example Amazon, PocketBook or inkBOOK) receives it at the address you entered and delivers it to your reader, and websites serve the article’s images.</li>
   <li>The extension can send email from your Gmail account. It cannot read your email.</li>
 </ul>
 
@@ -48,13 +48,13 @@
 <h3>Your Google account</h3>
 <p>When you click <span class="label">Sign in with Google</span> and agree, Google grants the extension two permissions:</p>
 <ul>
-  <li><strong>Send email on your behalf</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>). Used only to send the book you chose, or a test message when you click <span class="label">Test send</span>, to the Send‑to‑PocketBook address you entered in the settings.</li>
+  <li><strong>Send email on your behalf</strong> (<code>https://www.googleapis.com/auth/gmail.send</code>). Used only to send the book you chose, or a test message when you click <span class="label">Test send</span>, to the e‑reader address you entered in the settings.</li>
   <li><strong>Your email address</strong> (<code>https://www.googleapis.com/auth/userinfo.email</code>). Used to show which account is connected and as a sign‑in hint, so the extension can renew access without asking you again.</li>
 </ul>
 <p>The extension does not ask for and has no access to reading, searching, changing or deleting your email, contacts, files or any other Google data. Google issues it a short‑lived access token, valid for about an hour. The extension has no refresh token and no client secret.</p>
 
 <h3>Settings</h3>
-<p>Your Send‑to‑PocketBook address and preferences: image options, the email subject template and whether to add a link to the original.</p>
+<p>The names and email addresses of the e‑readers you added, and your preferences: image options, the email subject template and whether to add a link to the original.</p>
 
 <h2>Where the data is stored</h2>
 <p>Everything is stored in your browser on your device. We have no copy.</p>
@@ -62,7 +62,7 @@
 <table>
   <thead><tr><th>Data</th><th>Where</th><th>How long</th></tr></thead>
   <tbody>
-    <tr><td>Settings, including the Send‑to‑PocketBook address</td><td>Browser sync storage. If Chrome sync is on, the browser syncs it between your devices through your Google account.</td><td>Until you change them or remove the extension</td></tr>
+    <tr><td>Settings, including the names and addresses of your e‑readers</td><td>Browser sync storage. If Chrome sync is on, the browser syncs it between your devices through your Google account.</td><td>Until you change them or remove the extension</td></tr>
     <tr><td>Email address of the connected Google account</td><td>Local browser storage</td><td>Until you sign out or remove the extension</td></tr>
     <tr><td>Google access token</td><td>Session storage, in memory only</td><td>About an hour; deleted when you sign out or close the browser</td></tr>
     <tr><td>Article content, your edits in the preview, send status</td><td>Session storage, in memory only</td><td>Until you close the browser; entries older than 12 hours are also removed automatically</td></tr>
@@ -74,7 +74,7 @@
 <h2>Who receives data</h2>
 <ul>
   <li><strong>Google</strong>, to sign you in, check the token and send the email through the Gmail API. The email contains the EPUB file, the article title as the subject (you can change the template) and a line with the link to the original article. It is sent from your Gmail account, so a copy stays in your Sent folder. Google processes this data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
-  <li><strong>PocketBook.</strong> The email goes to the Send‑to‑PocketBook address you entered. PocketBook processes it under its own privacy policy and delivers the book to your reader.</li>
+  <li><strong>Your e‑reader’s service.</strong> The email goes to the address you entered for your e‑reader, for example a Send to Kindle address (Amazon), a Send‑to‑PocketBook address (PocketBook) or a Send2inkBOOK address (inkBOOK). That service processes it under its own privacy policy and delivers the book to your reader; Amazon may convert the book to its own format first.</li>
   <li><strong>Websites hosting the article’s images</strong>, as described above.</li>
 </ul>
 <p>We don’t share data with anyone else. We don’t sell data, don’t use or transfer it for advertising, and don’t use or transfer it to determine creditworthiness or for lending purposes.</p>
@@ -113,7 +113,7 @@
   <li>Click <span class="label">Sign out</span> in the extension’s settings: the token and the account address are deleted from the browser, and the extension asks Google to revoke the token.</li>
   <li>Revoke the extension’s access at any time in your <a href="https://myaccount.google.com/permissions">Google Account</a>.</li>
   <li>Remove the extension: the browser deletes all data it stored, settings included.</li>
-  <li>Emails already sent stay in your Gmail Sent folder, and books stay in PocketBook, until you delete them there.</li>
+  <li>Emails already sent stay in your Gmail Sent folder, and books stay with your e‑reader’s service, such as your Amazon library or PocketBook cloud, until you delete them there.</li>
 </ul>
 <p>Since we hold no data about you, there is nothing for us to export or delete, but you are welcome to contact us with any question.</p>
 
@@ -133,7 +133,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost is an independent project, not affiliated with or endorsed by PocketBook or Google. PocketBook, Gmail and Google are trademarks of their respective owners.</p>
+    <p>Inkpost is an independent project, not affiliated with or endorsed by Amazon, PocketBook, inkBOOK or Google. Amazon, Kindle, PocketBook, inkBOOK, Gmail and Google are trademarks of their respective owners.</p>
   </div>
 </footer>
 </body>

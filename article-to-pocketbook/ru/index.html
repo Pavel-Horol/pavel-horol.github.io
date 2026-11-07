@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Inkpost: статьи из браузера на читалку PocketBook</title>
-  <meta name="description" content="Расширение для браузера: превращает открытую статью в аккуратный EPUB с картинками и отправляет его на PocketBook через Send-to-PocketBook.">
+  <title>Inkpost: статьи из браузера на читалку</title>
+  <meta name="description" content="Расширение для браузера: превращает открытую статью в аккуратный EPUB с картинками и отправляет его по почте на Kindle, PocketBook или другую читалку.">
   <link rel="canonical" href="https://pavel-horol.github.io/article-to-pocketbook/ru/">
   <link rel="alternate" hreflang="en" href="https://pavel-horol.github.io/article-to-pocketbook/">
   <link rel="alternate" hreflang="ru" href="https://pavel-horol.github.io/article-to-pocketbook/ru/">
@@ -26,7 +26,7 @@
 <section class="hero">
   <div>
     <h1>Inkpost</h1>
-    <p class="lede">Расширение для браузера: превращает статью, которую вы читаете, в аккуратную EPUB-книгу с картинками, подготовленными для e‑ink, и одним кликом отправляет её на читалку PocketBook.</p>
+    <p class="lede">Расширение для браузера: превращает статью, которую вы читаете, в аккуратную EPUB-книгу с картинками, подготовленными для e‑ink, и отправляет её на вашу читалку: Kindle, PocketBook, inkBOOK или другую, которая принимает книги по почте.</p>
     <p class="badge">Скоро в Chrome Web Store</p>
   </div>
   <svg class="illustration" viewBox="0 0 400 240" aria-hidden="true" focusable="false">
@@ -71,9 +71,9 @@
   <h2 id="how">Как это работает</h2>
   <ol class="steps">
     <li><strong>Откройте статью</strong> и нажмите на иконку расширения или <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.</li>
-    <li><strong>Отправьте.</strong> В открывшемся окне нажмите «Отправить на PocketBook». Книга собирается прямо в браузере и уходит письмом с вашего Gmail на адрес Send‑to‑PocketBook. На читалке она появится после ближайшей синхронизации.</li>
+    <li><strong>Отправьте.</strong> В открывшемся окне нажмите кнопку отправки. Книга собирается прямо в браузере и уходит письмом с вашего Gmail на адрес читалки. На читалке она появится после ближайшей синхронизации.</li>
   </ol>
-  <p>В том же окне книгу можно просто скачать в EPUB или открыть предпросмотр: убрать лишние блоки, поправить заголовок или автора.</p>
+  <p>Если читалок несколько, выберите нужную в том же окне. Там же книгу можно просто скачать в EPUB или открыть предпросмотр: убрать лишние блоки, поправить заголовок или автора.</p>
 </section>
 
 <section class="section" aria-labelledby="book">
@@ -91,19 +91,28 @@
 <section class="section" aria-labelledby="need">
   <h2 id="need">Что понадобится</h2>
   <ul>
-    <li>Читалка PocketBook с адресом Send‑to‑PocketBook (<code>…@pbsync.com</code>). На читалке он в разделе <em>Настройки → Аккаунты и синхронизация → Send‑to‑PocketBook</em>.</li>
+    <li>Читалка, которая принимает книги по почте:
+      <ul>
+        <li><strong>Kindle</strong> с адресом Send to Kindle (<code>…@kindle.com</code>). На сайте Amazon он в разделе <em>Manage Your Content and Devices → Preferences → Personal Document Settings</em>;</li>
+        <li><strong>PocketBook</strong> с адресом Send‑to‑PocketBook (<code>…@pbsync.com</code>). На читалке он в разделе <em>Настройки → Аккаунты и синхронизация → Send‑to‑PocketBook</em>;</li>
+        <li><strong>inkBOOK</strong> с включённой функцией Send2inkBOOK в настройках читалки;</li>
+        <li>или другая читалка, сервис которой даёт адрес для книг по почте.</li>
+      </ul>
+    </li>
     <li>Аккаунт Google с Gmail: книги уходят с вашего собственного ящика.</li>
     <li>Google Chrome или другой браузер на Chromium. Проверено в Chrome и Brave.</li>
   </ul>
+  <p class="note">Отправка проверена на PocketBook. Kindle, inkBOOK и другие читалки пока не проверялись: кнопка <span class="label">Test send</span> в настройках покажет, доходят ли книги до вашей.</p>
   <p class="note">Интерфейс расширения на английском. Названия кнопок ниже приведены так, как они написаны в нём.</p>
 </section>
 
 <section class="section" aria-labelledby="setup">
   <h2 id="setup">Настройка за минуту</h2>
   <ol>
-    <li>Откройте настройки расширения и введите адрес Send‑to‑PocketBook.</li>
+    <li>Откройте настройки расширения, выберите свою читалку и введите её адрес.</li>
     <li>Нажмите <span class="label">Sign in with Google</span> («Войти через Google») и разрешите отправку писем.</li>
-    <li>Нажмите <span class="label">Test send</span> («Тестовая отправка»). От PocketBook придёт письмо о неизвестном отправителе: нажмите в нём <em>add to whitelist</em>, иначе PocketBook молча отбрасывает письма с вашего Gmail.</li>
+    <li>Для Kindle добавьте свой адрес Gmail в список <em>Approved Personal Document E‑mail List</em> в настройках Amazon, иначе Amazon отклонит письмо. Список разрешённых отправителей может быть и у других сервисов.</li>
+    <li>Нажмите <span class="label">Test send</span> («Тестовая отправка»). Для PocketBook придёт письмо о неизвестном отправителе: нажмите в нём <em>add to whitelist</em>, иначе PocketBook молча отбрасывает письма с вашего Gmail.</li>
   </ol>
 </section>
 
@@ -112,7 +121,7 @@
   <p>Книги отправляются с вашего Gmail, поэтому расширение просит у Google два разрешения:</p>
   <dl class="scopes">
     <dt>Отправлять письма от вашего имени <code>gmail.send</code></dt>
-    <dd>Только чтобы отправить выбранную книгу на указанный вами адрес Send‑to‑PocketBook. Читать, искать, изменять или удалять ваши письма расширение не может.</dd>
+    <dd>Только чтобы отправить выбранную книгу на указанный вами адрес читалки. Читать, искать, изменять или удалять ваши письма расширение не может.</dd>
     <dt>Видеть адрес вашей почты <code>userinfo.email</code></dt>
     <dd>Чтобы показать, какой аккаунт подключён, и обновлять доступ, не спрашивая вас заново.</dd>
   </dl>
@@ -125,7 +134,7 @@
   <ul>
     <li>Статьи обрабатываются в вашем браузере. Никакого нашего сервера посередине нет.</li>
     <li>Никакой аналитики, рекламы и слежки. Данные не продаются.</li>
-    <li>Книга попадает только к Google, который отправляет письмо, и к PocketBook, который доставляет её на читалку.</li>
+    <li>Книга попадает только к Google, который отправляет письмо, и к сервису вашей читалки, например Amazon, PocketBook или inkBOOK, который доставляет её на устройство.</li>
   </ul>
   <p><a href="privacy.html">Полная политика конфиденциальности</a></p>
 </section>
@@ -133,7 +142,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a href="../ru/privacy.html">Политика конфиденциальности</a> · <a href="../ru/terms.html">Условия использования</a> · <a href="mailto:pashahorolskij4@gmail.com">pashahorolskij4@gmail.com</a></p>
-    <p>Inkpost — независимый проект, не связанный с PocketBook и Google и не одобренный ими. PocketBook, Gmail и Google — товарные знаки соответствующих владельцев.</p>
+    <p>Inkpost — независимый проект, не связанный с Amazon, PocketBook, inkBOOK и Google и не одобренный ими. Amazon, Kindle, PocketBook, inkBOOK, Gmail и Google — товарные знаки соответствующих владельцев.</p>
   </div>
 </footer>
 </body>
